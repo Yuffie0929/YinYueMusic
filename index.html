@@ -6,15 +6,12 @@
     <title>Create by Yuffie</title>
     <!--整合后的最终版-->
     <style type="text/css" id="css">
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        #wapper {
+
+        #picTab {
             position: relative;/*供nav绝对定位使用*/
             overflow: hidden;
         }
-        #list{
+        #picList{
             position: absolute;/*子元素浮动,父元素为绝对定位,则父元素不用清除浮动*/
             left: 0;
             top: 0;
@@ -25,15 +22,15 @@
             -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
         }
-        #list li{
+        #picList li{
             float: left;
         }
-        #list li img { /*js写完之后再加*/
+        #picList li img { /*js写完之后再加*/
             width: 100%;
             display: block;/*解决img撑a标签空隙3px*/
         }
 
-        #nav {
+        #picNav {
             position: absolute;
             left: 0;
             bottom: 3px;
@@ -41,110 +38,110 @@
             line-height: 10px;
             text-align: center;
         }
-        #nav span {
+        #picNav span {
             display: inline-block;
             width: 10px;
             height: 10px;
             background: rgba(50,50,50,0.3);
             border-radius: 5px;
         }
-        #nav .active {
+        #picNav .active {
             background: #690;
         }
     </style>
     <link rel="stylesheet" href="css/index.css">
+    <script src="js/draft.js"></script>
 </head>
 
 <body>
-    <section class="wrap">
-        <header id="header">
-            <div class="header-top">
-                <div class="logo">
-                    <a href="javascript:;"><img src="img/logo.png" alt=""></a>
-                </div>
-                <div class="headerBtn">
-                    <a href="javascript:;" class="login">登录</a>
-                    <a href="javascript:;" class="register">注册</a>
-                </div>
+<section class="wrap">
+    <header id="header">
+        <div class="header-top">
+            <div class="logo">
+                <a href="javascript:;"><img src="img/logo.png" alt=""></a>
             </div>
-            <div class="header-bottom">
-                <div id="navBtn" class="navBtnClose"><a href="javascript:;"></a></div>
-                <form action="" method="get" class="searchBar">
-                    <input type="text" placeholder="请输入搜索内容" class="searchText" name="searchText">
-                    <input type="submit" class="searchSub" value="搜索">
-                </form>
-            </div>
-            <ul class="nav">
-                <li><a href="javascript:;">首页</a></li>
-                <li><a href="javascript:;">MV</a></li>
-                <li><a href="javascript:;">悦单</a></li>
-                <li><a href="javascript:;">V榜</a></li>
-                <li><a href="javascript:;">音悦stage</a></li>
-                <li><a href="javascript:;">商城</a></li>
-                <li><a href="javascript:;">节目</a></li>
-                <li><a href="javascript:;">饭团</a></li>
-                <li><a href="javascript:;">资讯</a></li>
-                <li><a href="javascript:;">我的家</a></li>
-                <li><a href="javascript:;">APP下载</a></li>
-                <li><a href="javascript:;">热门应用</a></li>
-            </ul>
-        </header>
-        <div class="navBarBox">
-            <div class="navScroll">
-                <div class="navBar">
-                    <a href="javascript:;" class="active">首页</a>
-                    <a href="javascript:;">MV</a>
-                    <a href="javascript:;">悦单</a>
-                    <a href="javascript:;">V榜</a>
-                    <a href="javascript:;">音悦stage</a>
-                    <a href="javascript:;">商城</a>
-                    <a href="javascript:;">节目</a>
-                    <a href="javascript:;">饭团</a>
-                    <a href="javascript:;">资讯</a>
-                    <a href="javascript:;">我的家</a>
-                    <a href="javascript:;">APP下载</a>
-                    <a href="javascript:;">热门应用</a>
-                </div>
+            <div class="headerBtn">
+                <a href="javascript:;" class="login">登录</a>
+                <a href="javascript:;" class="register">注册</a>
             </div>
         </div>
-        <div id="wapper">
-            <ul id="list">
-                <li>
-                    <a href="javascript:viod(0)">
-                        <img src="img/1.jpg" />
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:viod(0)">
-                        <img src="img/2.jpg" />
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:viod(0)">
-                        <img src="img/3.jpg" />
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:viod(0)">
-                        <img src="img/4.jpg" />
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:viod(0)">
-                        <img src="img/5.jpg" />
-                    </a>
-                </li>
-            </ul>
-
-            <nav id="nav">
-                <span class="active"></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </nav>
+        <div class="header-bottom">
+            <div id="navBtn" class="navBtnClose"><a href="javascript:;"></a></div>
+            <form action="" method="get" class="searchBar">
+                <input type="text" placeholder="请输入搜索内容" class="searchText" name="searchText">
+                <input type="submit" class="searchSub" value="搜索">
+            </form>
         </div>
-    </section>
+        <ul class="nav">
+            <li><a href="javascript:;">首页</a></li>
+            <li><a href="javascript:;">MV</a></li>
+            <li><a href="javascript:;">悦单</a></li>
+            <li><a href="javascript:;">V榜</a></li>
+            <li><a href="javascript:;">音悦stage</a></li>
+            <li><a href="javascript:;">商城</a></li>
+            <li><a href="javascript:;">节目</a></li>
+            <li><a href="javascript:;">饭团</a></li>
+            <li><a href="javascript:;">资讯</a></li>
+            <li><a href="javascript:;">我的家</a></li>
+            <li><a href="javascript:;">APP下载</a></li>
+            <li><a href="javascript:;">热门应用</a></li>
+        </ul>
+    </header>
+    <div class="navBarBox">
+        <div class="navScroll">
+            <div class="navBar">
+                <a href="javascript:;" class="active">首页</a>
+                <a href="javascript:;">MV</a>
+                <a href="javascript:;">悦单</a>
+                <a href="javascript:;">V榜</a>
+                <a href="javascript:;">音悦stage</a>
+                <a href="javascript:;">商城</a>
+                <a href="javascript:;">节目</a>
+                <a href="javascript:;">饭团</a>
+                <a href="javascript:;">资讯</a>
+                <a href="javascript:;">我的家</a>
+                <a href="javascript:;">APP下载</a>
+                <a href="javascript:;">热门应用</a>
+            </div>
+        </div>
+    </div>
+    <div id="picTab">
+        <ul id="picList">
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="img/1.jpg"/>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="img/2.jpg"/>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="img/3.jpg"/>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="img/4.jpg"/>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="img/5.jpg"/>
+                </a>
+            </li>
+        </ul>
+        <div id="picNav">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</section>
 
 </body>
 <script type="text/javascript" src="js/draft.js"></script>
@@ -155,7 +152,7 @@
     setRem();
 
     window.addEventListener('onorientationchange' in window ? 'orientationchange' : 'resize', function () {
-       setRem();
+        setRem();
     });
     function setRem() {
         var html = document.querySelector('html');
@@ -192,33 +189,33 @@
 
         var navBar = document.querySelector('.navBar');
         var navScroll = document.querySelector('.navScroll');
-/*      var point = 0;
-        var startX = 0;
-        var minX = navScroll.clientWidth - navBar.offsetWidth;
-        var flag = 1;
+        /*      var point = 0;
+         var startX = 0;
+         var minX = navScroll.clientWidth - navBar.offsetWidth;
+         var flag = 1;
 
 
 
-      navBar.addEventListener('touchstart', function (ev) {
-            point = ev.changedTouches[0].clientX;
-            startX = cssTransform(navBar, 'translateX');
-        });
+         navBar.addEventListener('touchstart', function (ev) {
+         point = ev.changedTouches[0].clientX;
+         startX = cssTransform(navBar, 'translateX');
+         });
 
-        navBar.addEventListener('touchmove', function (ev) {
-            var newpoint = ev.changedTouches[0].clientX;
-            var dis = newpoint - point;
-            var translateX = startX + dis;
-            if(translateX>0){
-                flag = 0.8-translateX/(navScroll.clientWidth*2);
-                translateX =translateX*flag;
-            }
-            if(translateX<minX){
-                var over =  minX - translateX;
-                flag = 0.8-over/(navScroll.clientWidth*2);
-                translateX =minX-over*flag;
-            }
-            cssTransform(navBar, 'translateX',translateX);
-        });*/
+         navBar.addEventListener('touchmove', function (ev) {
+         var newpoint = ev.changedTouches[0].clientX;
+         var dis = newpoint - point;
+         var translateX = startX + dis;
+         if(translateX>0){
+         flag = 0.8-translateX/(navScroll.clientWidth*2);
+         translateX =translateX*flag;
+         }
+         if(translateX<minX){
+         var over =  minX - translateX;
+         flag = 0.8-over/(navScroll.clientWidth*2);
+         translateX =minX-over*flag;
+         }
+         cssTransform(navBar, 'translateX',translateX);
+         });*/
 
 
         function loaded () {
@@ -229,103 +226,153 @@
 
     }
 
-    window.onload=function(){
+
+    //轮播
+    carouselFigure();
+    function carouselFigure(){
         var css = document.querySelector("#css");
-        var wrap = document.querySelector("#wapper");
-        var list = document.querySelector("#list");
+        var wrap = document.querySelector("#picTab");
+        var list = document.querySelector("#picList");
+
         list.innerHTML += list.innerHTML;
-        var lis = document.querySelectorAll("#list li");
-        var nav = document.querySelectorAll("#nav span");
-        var style = "#wapper{height:"+ lis[0].offsetHeight+"px}";
-        style+="#list{width:"+lis.length+"00%}";
-        style+="#list li{width:"+(1/lis.length*100)+"%}";
-        css.innerHTML+= style;
-        var clearTime=0;
-        var now =0;
-        var startPoint = 0;
-        var startX = 0;
-        var	dis =0;
+
+        var lis = document.querySelectorAll("#picList li");
+        var nav = document.querySelectorAll("#picNav span");
+
+
+
+        /*问题:
+         1.ul拿的是父元素的100%--->一路往上找--->414px
+         2.ul的宽度应该为414 * li的个数 才能在一行放下所有的li
+         3.li应该设置为 (1/lis.length*100)%
+         4.img的样式应该控制为 宽高自适应
+
+         5.实现轮播效果,需要ul为绝对定位
+         6.设置ul绝对定位后,wapper高度无法被撑开,需要js来控制
+         wapper高度应与某一个li的高度一至
+         */
+        setTimeout(function(){
+            var style ="#picList{width:"+lis.length+"00%;}";
+            style+="#picList li{width: "+(1/lis.length*100)+"%;}";
+            style+="#picTab{height:"+lis[0].offsetHeight+"px;}";
+            css.innerHTML+= style;
+        },20);
+
+        //开始滑屏
+        var startpoint =0;
+        var startX=0;
+        //偏移量容器
         cssTransform(list,"translateX",0);
+        var now=0;
+        var clearTime =0;
+
+        //判断是否为x轴滑动
+        var isX =true;
+
+        //判断是否为第一次
+        var isFirst =true;
+
+        wrap.addEventListener("touchstart",function(ev){
+            clearInterval(clearTime);
+            list.style.transition="none";
+
+
+            if(now ==0){
+                now=nav.length;
+            }
+            if(now==lis.length-1){
+                now=nav.length-1
+            }
+            cssTransform(list,"translateX",-now*wrap.offsetWidth);
+
+
+            var touch =ev.changedTouches[0];
+            startpoint = touch;
+            startX= cssTransform(list,"translateX");
+
+            isX =true;
+            isFirst = true;
+        });
+
+        wrap.addEventListener("touchmove",function(ev){
+            if(!isX){
+                return;
+            }
+
+            var touch =ev.changedTouches[0];
+            var nowpoint=touch;
+            var disX =nowpoint.clientX -startpoint.clientX;
+            var disY =nowpoint.clientY -startpoint.clientY;
+
+            if(isFirst){
+                isFirst = false;
+                if(Math.abs(disY)>Math.abs(disX)){
+                    isX=false;
+                    return;
+                }
+            }
+
+
+
+            cssTransform(list,"translateX",startX + disX);
+        });
+
+        wrap.addEventListener("touchend",function(ev){
+            var touch =ev.changedTouches[0];
+            //标记当前哪一个li占据着我们的视口
+
+
+
+
+
+            now = Math.round(-cssTransform(list,"translateX")/wrap.offsetWidth);
+            console.log(cssTransform(list,"translateX"));
+
+            //限制超出
+            if(now < 0){
+                now=0;
+            }
+            if(now>lis.length-1){
+                now=lis.length-1
+            }
+
+            /*cssTransform(list,"translateX",-now*wrap.offsetWidth);
+             list.style.transition="1s";
+             for(var i=0;i<nav.length;i++){
+             nav[i].className="";
+             }
+             nav[now%nav.length].className="active";*/
+            autoMove();
+//				auto();
+        });
+
+
+        //自动轮播
         auto();
-
-        wrap.addEventListener(
-                "touchstart",
-                function(e) {
-                    list.style.transition = "none";
-
-                    var translateX = cssTransform(list,"translateX");
-                    now = Math.round(-translateX / wrap.offsetWidth);
-                    //注意nav中span的个数必须是总li的一半
-                    if(now == 0) {
-                        now = nav.length;
-                    }
-                    if(now == lis.length-1) {
-                        now = nav.length-1;
-                    }
-
-                    startPoint = e.changedTouches[0].clientX;
-
-                    cssTransform(list,"translateX",-now * wrap.offsetWidth);
-                    startX = cssTransform(list,"translateX");
-
-                    clearInterval(clearTime);
+        function auto(){
+            clearTime =setInterval(function(){
+                if(now==lis.length-1){
+                    list.style.transition="none";
+                    now=nav.length-1
+                    cssTransform(list,"translateX",-now*wrap.offsetWidth);
                 }
-        );
-        wrap.addEventListener(
-                "touchmove",
-                function(e) {
-                    var nowPoint = e.changedTouches[0].clientX;
-                    dis = nowPoint - startPoint;
-                    cssTransform(list,"translateX",startX + dis)
-                }
-        );
-        wrap.addEventListener(
-                "touchend",
-                function(e) {
-                    var translateX = cssTransform(list,"translateX");
 
-                    now = Math.round(-translateX / wrap.offsetWidth);
-//						if(dis>0){//向左滑 	floor向下取整
-//							 now = Math.floor(-translateX / wrap.offsetWidth);
-//						}else{	//向右滑		ceil向上取整
-//							 now = Math.ceil(-translateX / wrap.offsetWidth);
-//						}
-
-                    //限制触屏范围
-                    if(now<0){
-                        now=0;
-                    }
-                    if(now > lis.length-1) {
-                        now = lis.length-1;
-                    }
-                    //新增过渡效果
+                setTimeout(function(){
+                    now++;
                     autoMove();
-                    auto();
-                }
-        );
-
-        function auto() {
-            clearTime=setInterval(
-                    function() {
-                        if(now == lis.length-1){
-                            now =nav.length-1;
-                        }
-                        list.style.transition = "none";
-                        cssTransform(list,"translateX",-now * wrap.offsetWidth);
-                        setTimeout(function(){
-                            now++;
-                            autoMove();
-                        },20)
-                    },3000);
+                },20);
+            },2000);
         }
 
+
         function autoMove(){
-            list.style.transition = "1s";
-            cssTransform(list,"translateX",-now * wrap.offsetWidth);
-            for(var i = 0 ; i < nav.length; i++) {
-                nav[i].className = "";
+            list.style.transition="1s";
+            cssTransform(list,"translateX",-now*wrap.offsetWidth);
+
+            for(var i=0;i<nav.length;i++){
+                nav[i].className="";
             }
-            nav[now%nav.length].className = "active";
+            nav[now%nav.length].className="active";
         }
     }
 </script>

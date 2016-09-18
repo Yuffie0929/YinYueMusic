@@ -1,49 +1,38 @@
-/*		
- 	自定义cssTransform函数,实现transform读写功能;
-	两个参数:读
-		cssTransform(arg1,arg2)
-	三个参数:写
-		cssTransform(arg1,arg2,arg3)
-*/
-(function(w){
-	w.cssTransform=function(el,attr,val){
-		if(!el.transform){
-			el.transform={};
-		}
-		if(arguments.length>2){
-			el.transform[attr] = val;
-			var text ="";
-			for(var item in el.transform){
-				switch (item){
-					case "rotate":
-					case "skewX":
-					case "skewY":
-						text +=item+"("+el.transform[item]+"deg) ";
-						break;
-					case "translateX":
-					case "translateY":
-						text +=item+"("+el.transform[item]+"px) ";
-						break;
-					case "scaleX":
-					case "scaleY":
-					case "scale":
-						text +=item+"("+el.transform[item]+") ";
-						break;
-				}
-			}
-			el.style.transform = el.style.WebkitTransform =text;
-		}else{
-			val  = el.transform[attr];
-			if(typeof val == "undefined"){
-				if(attr == "scale" || attr == "scaleX" || attr == "scaleY"  ) {
-					val = 1;
-				} else {
-					val = 0;
-				}
-			}
-			return val;
-		}
+function cssTransform(el,attr,val) {
+	if(!el.transform){
+		el.transform = {};
 	}
-})(window)
-
-
+	if(arguments.length>2) {
+		el.transform[attr] = val;
+		var sVal = "";
+		for(var s in el.transform){
+			switch(s) {
+				case "rotate":
+				case "skewX":
+				case "skewY":
+					sVal +=s+"("+el.transform[s]+"deg) ";
+					break;
+				case "translateX":
+				case "translateY":
+					sVal +=s+"("+el.transform[s]+"px) ";
+					break;
+				case "scaleX":
+				case "scaleY":
+				case "scale":
+					sVal +=s+"("+el.transform[s]+") ";
+					break;
+			}
+			el.style.WebkitTransform = el.style.transform = sVal;
+		}
+	} else {
+		val  = el.transform[attr];
+		if(typeof val == "undefined" ) {
+			if(attr == "scale" || attr == "scaleX" || attr == "scaleY"  ) {
+				val = 1;
+			} else {
+				val = 0;
+			}
+		}
+		return val;
+	}
+}
