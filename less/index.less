@@ -1,0 +1,69 @@
+body,p,h1,h2,h3,h4{margin:0;}
+ul,li{margin:0;padding:0;list-style: none;}
+img{vertical-align: top;}
+a{text-decoration: none;}
+html,body{height:100%;overflow: hidden;}
+input[type=text]{
+  border: none;
+  outline: none;
+}
+input[type=submit]{
+  border: none;
+  outline: none;
+}
+::-webkit-input-placeholder {color:#333;}
+:-moz-placeholder {color:#333;}
+::-moz-placeholder {color:#333;}
+:-ms-input-placeholder {color:#333;}
+
+
+@r:67.5rem;
+.clear{
+  *zoom:1;
+  &:after{
+    content:'\200B';display:block;height:0;clear:both;}
+}
+.fl{float: left}
+.fr{float: right}
+.font(@fs:12;@lh:12;@c:#000;){
+  color:@c;
+  font-size:@fs/@r;
+  line-height: @lh/@r;
+  font-family:'Microsoft YaHei', sans-serif;
+}
+
+.wrap{height:100%;overflow: auto;}
+.header-top{height:135/@r;background: #000;position: absolute;left:0;top:0;width:100%;
+  .logo{.fl;
+    img{display: block;width:240/@r;height:88/@r;padding:26/@r 17/@r 21/@r 17/@r;}};
+
+  };
+  .headerBtn{.fr;margin-top: 21/@r;
+    .login, .register{.fl;display:inline-block;width:111/@r;height:78/@r;margin-right: 15/@r;text-align: center;border-radius: 8/@r;background: #669900;.font(@fs:42;@lh:78;@c:#ccc;);}
+
+}
+.header-bottom{
+  margin-top: 135/@r;background-color: rgba(0,0,0,0.9);height:103/@r;padding:16/@r;
+}
+#navBtn{.fl;width:88/@r;height:103/@r;.font(@c:#fff;@lh:88;);font-weight: bold;border-radius: 10/@r;margin:3/@r 16/@r 0 0;background: url("../img/menuBtn.png") no-repeat;background-size: 80/@r; }
+.navBtnClose{background-position: center 0 !important;}
+.navBtnShow{background-position: center -120/@r !important;}
+
+.searchBar{margin-left: 110/@r;.clear;
+  .searchText{.fl;width:750/@r;height:103/@r;background-color: #999;padding: 5/@r 10/@r;border: 1px solid #5a5a5a;.font(@fs:41;@c:#333);border-radius: 15/@r 0 0 15/@r;box-sizing: border-box;
+  &:focus{background-color: #fff;}
+  };
+  .searchSub{.fr;width:180/@r;height:103/@r;background-color: #414040;.font(@c:#fff;@fs:60;);border-radius: 0 15/@r 15/@r 0;};
+}
+
+.nav{background-color: rgba(0,0,0,0.8);.clear;display: none;position: absolute;z-index: 5;
+  li{.fl;width:22.5%;height:135/@r;text-align: center;};
+  a{.font(@fs:50;@lh:135;@c:#fff;)}
+}
+.navBarBox{background-color: #eee;box-sizing: border-box;
+  .navScroll{overflow: hidden;}
+  .navBar{padding: 31/@r 0 14/@r 0;white-space:nowrap;border-bottom: 1px solid #ccc;.font(@fs:0;);.fl;};
+  a{display: inline-block;.font(@fs:70;@lh:129;);color:#020202;padding: 0 38/@r;};
+  .active{background-color: #690;color:#fff;}
+}
+
